@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class ArraysDemo {
 
     static void main() {
@@ -22,6 +24,8 @@ public class ArraysDemo {
         numbers = new int[]{12, 66, 25, 34};
         int maxNumber = ex4(numbers);
         IO.println("Maximum number : "+ maxNumber);
+        ex5();
+        ex6();
     }
 
     static void ex1(){
@@ -87,5 +91,24 @@ public class ArraysDemo {
             }
         }
         return maxNumber;
+    }
+
+    //This method will use Utility Methods : sort
+    static void ex5() {
+        //Array.sort()
+        String[] names = {"Simon", "Eric", "ulf", "Fedrik", "Jonas", "Kent", "Marcus", "Martina"};
+        IO.println("Original Array :" + Arrays.toString(names));
+
+        Arrays.sort(names);
+        IO.println("Sorted Array :" + Arrays.toString(names));
+    }
+
+    //This method will use Utility Methods : copyOf
+    static void ex6() {
+        int[] numbers = {2, 4, 6, 8};
+
+        int[] newArray = Arrays.copyOf(numbers, numbers.length + 1);
+        newArray[newArray.length - 1] = 50;
+        IO.println(Arrays.toString(newArray));
     }
 }
